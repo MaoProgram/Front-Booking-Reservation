@@ -1,73 +1,176 @@
-mat-sidenav-container{
-  height: calc(100vh - 65px);
+// Estilos para el componente
+mat-toolbar {
+  background: linear-gradient(to right, #FFF0DE, #cbdbf5, #cdffd7);
+  color: rgb(32, 32, 32); // Color del texto en el toolbar
+  height: 50px; // Altura del toolbar
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2); // Sombra del toolbar
+  display: flex; // Usar flexbox para alinear los elementos
+  justify-content: flex-end; // Alinear los elementos alrededor
+  padding: 0 15px; // Espaciado interno horizontal del toolbar
+  align-items: center; // Alinear verticalmente los elementos al centro
+
+  // Estilos para el logo
+  .logo-imagen {
+    background-image: url(/assets/img/logo-reservefinca.png); // URL de la imagen del logo
+    background-size: contain; // Ajustar el tamaño de la imagen para que quepa
+    background-repeat: no-repeat; // Evitar la repetición de la imagen
+    background-position: left center; // Posicionar la imagen a la izquierda y centrada verticalmente
+    height: 50px; // Altura del logo
+    width: 80px; // Ancho del logo
+    margin-right: 130px; // Desplazar hacia la izquierda para posicionar de manera independiente
+}
+.titulo {
+  h2 {
+    font-size: 24px; // Tamaño de fuente del título
+    color: #011b3b; // Color del texto del título
+    margin: 10px 220px; // Margen superior e inferior de 10px, margen izquierdo y derecho automático
+    
+  }
+}
+
+  // Estilos para el botón de lista desplegable
+  .dropdown-button {
+    color: #000000; // Color del texto del botón de lista desplegable
+    background-color: #8dc2ff80;
+    font-weight: bold; // Peso de la fuente del botón de lista desplegable
+    margin-right: 15px; // Espaciado a la derecha entre botones
+    border-color: #636262;
+    border-radius: 10%;
+    border-style:dotted;
+    border-width: 0.2px;
+    width: auto; // Ancho automático
+  }
+}
+
+// Estilos para el contenido principal
+.mat-sidenav-content {
+  padding: 10px; // Espaciado interno del contenido principal
+  background: linear-gradient(to right, #E3E3E3, #E3E3E3, #C9C9C9); 
+}
+
+// Estilos para las cards de fincas
+.fincas-card {
+  margin-bottom: 20px; // Margen inferior entre las cards de fincas
+  box-shadow: 0 1px 1px 0 #dfe6e0; // Sombra de las cards
+  background: linear-gradient(to right, #fff0de8a, #cbdbf5a1, #cdffd7a4);
+
+}
+
+// Estilos para el título de la card
+.mat-card-title {
+  font-size: 18px; // Tamaño de la fuente del título
+  font-weight: bold; // Peso de la fuente del título
+}
+
+// Estilos para la descripción de la card
+.descripcion-fincas {
+  font-size: 14px; // Tamaño de la fuente de la descripción
   
 }
-mat-toolbar{
-  background: #102d41;
-  color: aliceblue;
-}
-.content{
-   height: calc(100vh - 98px);
-   border-radius: 10px;
-   margin: 16px;
-   margin-left: 32px;
-   display: flex;
-   font-size: 2rem;
-   color: rgb(7, 2, 2);
-   
 
+// Estilos para el botón de reserva dentro de la card
+.card-actions-button {
+  position: absolute; // Posicionar de manera absoluta dentro del contenedor padre
+  bottom: 10px; // Ajustar la distancia desde la parte inferior del contenedor padre
+  left: 50%; // Alinear horizontalmente al centro
+  transform: translateX(-50%); // Centrar horizontalmente utilizando traslación
+  background-color: #C5669D; // Color de fondo del botón de reserva
+  color: rgb(0, 0, 0); // Color del texto del botón de reserva
+  padding: 10px 20px; // Ajustar el padding para dar espacio al botón
+  border: 2px outset #7c0e4e; // Eliminar el borde del botón
+  border-radius: 10px; // Agregar bordes redondeados
+  
+  cursor: pointer; // Cambiar el cursor al pasar sobre el botón
+  margin-top: auto;
+
+  &:hover {
+    background-color: darken(#EDB8EF, 10%); // Oscurecer el color de fondo al pasar el ratón por encima
+  }
 }
 
-.example-container {
+
+
+// Estilos para las tarjetas individuales
+.card-container {
+  position: relative; // Establecer posición relativa para que los botones sean absolutos relativos a este contenedor
+  height: auto; // Ajustar la altura automáticamente según el contenido de la tarjeta
+  flex: 0 10px calc(31% - 10px); // Tamaño de cada tarjeta, con margen entre ellas
+  margin-bottom: 20px; // Margen inferior entre las tarjetas
+  background: linear-gradient(to left, #a9d6bfb6, #c6a8d6ad);
+  width: calc(31% - 10px); // Ajustar el tamaño de cada tarjeta para que haya tres tarjetas por fila, con margen entre ellas
+  //margin: 10px; // Margen entre las tarjetas
+  padding: 10px; // Añadir relleno interno para separar el contenido de los bordes
+  height: 423px; // Establecer la altura de todos los contenedores al mismo valor
+  
+  display: flex; // Utilizar flexbox para alinear verticalmente el contenido
+  flex-direction: column; // Alinear el contenido en una columna
+}
+.nombre-finca {
+  text-align: center; /* Asegura que el texto del nombre esté centrado horizontalmente */
+}
+
+
+// Estilos para resaltar texto
+.resaltar {
+  font-weight: bold; /* o cualquier otro estilo de resaltado que desees */
+  color: #000000; /* por ejemplo, rojo */
+}
+
+// Estilos para el contenedor de la imagen
+.image-container {
   
   display: flex;
-  height: calc(100vh - 65px);
-  overflow: hidden;
-}
-.card-actions-button {
-  background: linear-gradient(to right, #3d2d2d, #304e85, #4c4c8f) !important;
-  color: #0c0911 !important;
-  font-size: 1rem !important;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: left; /* Centrar verticalmente */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 
-.card-container {
-  background: linear-gradient(to right, #533453, #31425f, #25255f);
+
+.flex-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content:space-between;
+  padding:  15px;
+  width: 50px;
+  
+}
+
+.scroll-container {
+  display: flex; // Utilizar flexbox para los contenedores
+  flex-wrap: wrap; // Permitir que los contenedores se envuelvan a la siguiente línea si no caben en el ancho del contenedor padre
+}
+
+//.card-container {
+  
+  //width: calc(31% - 10px); // Tamaño de cada tarjeta, con margen entre ellas
+  //margin-top: 10px;
+  //margin-bottom: 20px; // Margen inferior entre las tarjetas
+  //padding: 10px 10px;
+  //height: 480px;
+  
+//}
+.card-columns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 16px;
-  box-sizing: border-box;
-  overflow: hidden;
+  justify-content: space-between;
+  background: linear-gradient(to right, #E3E3E3, #E3E3E3, #C9C9C9); 
 }
 
-.fincas-card {
-  width: calc(30% - 16px);
-  margin-bottom: 16px;
+@media screen and (max-width: 768px) {
+  .card-container {
+    width: calc(50% - 10px); // Cambiar a dos columnas en pantallas más pequeñas
+    
+  }
 }
 
-.descripcion-fincas {
-  font-size: 14px; 
+@media screen and (max-width: 480px) {
+  .card-container {
+    width: 100%; // Una columna en dispositivos móviles más pequeños
+  }
 }
-
-.mat-paginator {
-  margin-top: 16px;
-  justify-content: center;
+.background-container {
+  background-color: #dde6f0; // Color de fondo para el contenedor
+  padding: 20px; // Espacio alrededor del contenido
 }
-
-
-.fincas-card h3 {
-  font-family: 'Tu-Fuente-Elegante', sans-serif; 
-  font-weight: bold;
-  color: #333; 
-  
-}
-
-
-.fincas-card .descripcion-fincas {
-  font-family: 'Otra-Fuente', sans-serif; 
-  color: #666; 
-  
-}
-
-

@@ -15,6 +15,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
  import { ReservationsService } from './services/reservation.service';
 import { FincasService } from './fincas/fincas.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+
+
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReservaDialogComponent,
     ReservaDialogComponent,
     BoldInfoDirective,
+    
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [ReservationsService, FincasService],
   bootstrap: [AppComponent],

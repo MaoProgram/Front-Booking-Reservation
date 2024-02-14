@@ -1,36 +1,26 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav-content class="content mat-elevation-z8">
-    <div class="logo-container">
-      <img
-        class="avatar logo mat-elevation-z8"
-        src="https://image.freepik.com/free-vector/elegant-ornamental-logo_52683-26633.jpg"
-      />
-      <div class="mat-2">
-        <mat-form-field>
-          <mat-label>example@gmail.com</mat-label>
-          <input matInput type="email" id="contrasena" class="form-control" />
-        </mat-form-field>
-      </div>
-      <div class="mat-2">
-        <mat-form-field>
-          <mat-label>Contraseña</mat-label>
-          <input
-            matInput
-            type="password"
-            id="contrasena"
-            class="form-control"
-            formControlName="contrasena"
-            required
-          />
-        </mat-form-field>
-      </div>
-      <div class="mat-3">
-        <div fxLayout="row" fxLayoutAlign="center">
-          <button mat-raised-button class="login-button" (click)="login()">
-            Login
-          </button>
+<div class="background-image"> <!-- Aquí agregamos la clase background-image -->
+  <div class="login-wrap">
+    <div class="login-html">
+      <div class="login-form">
+          <div class="group">
+            <label for="user" class="label">Username</label>
+            <input id="user" type="text" class="input">
+          </div>
+          <div class="group">
+            <label for="pass" class="label">Password</label>
+            <input id="pass" type="password" class="input" data-type="password">
+          </div>
+          <div class="group">
+            <input id="check" type="checkbox" class="check" checked>
+            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+          </div>
+          <div class="group">
+            <button class="button" (click)="login()">Log In</button>
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <a href="#forgot">Forgot Password?</a>
+          </div>
+        </div>
         </div>
       </div>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>

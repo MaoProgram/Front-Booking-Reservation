@@ -1,3 +1,41 @@
+<mat-toolbar>
+  <!-- Logo -->
+  <div class="logo-imagen"></div>
+  <div class="titulo"><h2>Country Stay Booker</h2></div>
+  <!-- Lista desplegable "Tus Reservas" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="reservasMenu">
+    Tus Reservas
+  </button>
+  <mat-menu #reservasMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item>HOME</button>
+    <button mat-menu-item>RESERVACIONES</button>
+    <button mat-menu-item>SALIR</button>
+  </mat-menu>
+
+  <!-- Lista desplegable "Acerca de Nosotros" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="nosotrosMenu">
+    Acerca de Nosotros
+  </button>
+  <mat-menu #nosotrosMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item>INFORMACIÓN GENERAL</button>
+    <button mat-menu-item>CONTACTO</button>
+  </mat-menu>
+
+  <!-- Lista desplegable "Mas Servicios" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="serviciosMenu">
+    Mas Servicios
+  </button>
+  <mat-menu #serviciosMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item>AYUDA</button>
+    <button mat-menu-item>SUGERENCIAS</button>
+    
+  </mat-menu>
+</mat-toolbar>
+
+<div class="background-container">
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8" mode="side" opened>
     <!-- Contenido del menú lateral -->
@@ -5,22 +43,37 @@
 
   <mat-sidenav-content class="content mat-elevation-z8">
     <div class="scroll-container">
-      <ng-container *ngFor="let page of paginatedFincas">
-        <div class="card-container">
-          <mat-card *ngFor="let finca of page" class="fincas-card" [ngClass]="{ 'clase-elegante': finca.claseNombre, 'clase-normal': finca.claseDescripcion }">
-            <img mat-card-image [src]="finca.imagen" alt="{{ finca.nombre }}" style="max-width: 100%; max-height: 100%;">
+      <div class="card-columns">
+        <div class="card-container" *ngFor="let finca of fincas">
+          <mat-card class="fincas-card">
+            <div class="image-container">
+              <img mat-card-image [src]="finca.imagen" alt="{{ finca.nombre }}" style="max-width: 220px; max-height: 150px;">
+            </div>
             <mat-card-content>
-              <h3 [ngClass]="{ 'clase-elegante': finca.claseNombre, 'clase-normal': finca.claseDescripcion }">{{ finca.nombre }}</h3>
-              <p class="descripcion-fincas">{{ finca.descripcion }}</p>
+              <h3 class="nombre-finca" [ngClass]="{ 'clase-nombre': finca.claseNombre, 'clase-descripcion': finca.claseDescripcion, 'clase-ubicacion': finca.claseUbicacion, 'clase-capacidad': finca.claseCapacidad, 'clase-precio': finca.clasePrecio }">
+                <span class="resaltar">{{ finca.nombre }}</span>
+              </h3>
+              <p class="descripcion-fincas" *ngIf="finca.Descripcion">
+                <span class="resaltar">Descripción: </span>{{ finca.Descripcion }}
+              </p>
+              <p class="clase-ubicacion" *ngIf="finca.Ubicacion">
+                <span class="resaltar">Ubicación: </span> {{ finca.Ubicacion }}
+              </p>
+              <p class="clase-capacidad" *ngIf="finca.Capacidad">
+                <span class="resaltar">Capacidad: </span> {{ finca.Capacidad }}
+              </p>
+              <p class="clase-precio" *ngIf="finca.Precio">
+                <span class="resaltar">Precio: </span> {{ finca.Precio }}
+              </p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button class="card-actions-button"(click)="alquilarFinca(finca)">Reserva</button>
+              <button mat-button class="card-actions-button" (click)="alquilarFinca(finca)">Reserva</button>
             </mat-card-actions>
           </mat-card>
         </div>
-      </ng-container>
-      <mat-paginator [pageSize]="pageSize" [length]="fincas.length" (page)="onPageChange($event)">
-      </mat-paginator>
+      </div>
+      <mat-paginator [pageSize]="pageSize" [length]="fincas.length" (page)="onPageChange($event)" *ngIf="paginatedFincas.length < 9"></mat-paginator>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</div>

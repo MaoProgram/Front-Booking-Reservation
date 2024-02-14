@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
 export class AuthComponent {
   constructor(private router: Router) {}
 
-  login() {
-    this.router.navigateByUrl('/dashboard/fincas/fincas');
+  login(){this.router.navigate(['/fincas'])}
   }
   
-}
+
