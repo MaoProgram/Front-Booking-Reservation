@@ -1,27 +1,51 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav-content class="content mat-elevation-z8">
-    <div class="scroll-container nosotros-container">
-      <section class="intro-section">
-        <h2>Bienvenidos a Nuestra Empresa</h2>
-        <p>Somos una empresa dedicada a ofrecer experiencias únicas y memorables en hermosas fincas de todo Colombia.</p>
-      </section>
+<mat-toolbar>
+  <!-- Logo -->
+  <div class="logo-imagen"></div>
+  <div class="titulo"><h2>Country Stay Booker</h2></div>
+  <!-- Lista desplegable "Tus Reservas" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="reservasMenu">
+    Tus Reservas
+  </button>
+  <mat-menu #reservasMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item class="menu-item" (click)="home()">HOME</button>
+    <button mat-menu-item class="menu-item" (click)="yourReservaciones()">RESERVACIONES</button>
+    <button mat-menu-item class="menu-item" (click)="salir()">SALIR</button>
+  </mat-menu>
 
-      <section class="mission-section">
-        <h2>Nuestra Misión</h2>
-        <p>Facilitar momentos inolvidables al conectar a las personas con increíbles espacios naturales, creando experiencias que perduran en el tiempo.</p>
-      </section>
+  <!-- Lista desplegable "Acerca de Nosotros" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="nosotrosMenu">
+    Acerca de Nosotros
+  </button>
+  <mat-menu #nosotrosMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item class="menu-item" (click)="informacion()">INFORMACIÓN GENERAL</button>
+    <button mat-menu-item class="menu-item" (click)="informacion()">CONTACTO</button>
+  </mat-menu>
 
-      <section class="mission-section">
-        <h2>Nuestra Visíon</h2>
-        <p>Convertirnos en la plataforma líder en la reserva de fincas, proporcionando opciones exclusivas para todo tipo de eventos y escapadas en Colombia.</p>
-      </section>
+  <!-- Lista desplegable "Mas Servicios" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="serviciosMenu">
+    Mas Servicios
+  </button>
+  <mat-menu #serviciosMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item class="menu-item">AYUDA</button>
+    <button mat-menu-item class="menu-item">SUGERENCIAS</button>
+    
+  </mat-menu>
+</mat-toolbar>
 
-      <section class="mission-section">
-        <h2>Nuestro compromiso con los clientes</h2>
-        <p>Estamos comprometidos a brindar un servicio excepcional, superando las expectativas de nuestros clientes en cada reserva. Su satisfacción es nuestra prioridad.</p>
-                <p>Nos dedicamos a curar una colección diversa de fincas excepcionales, asegurando que cada cliente encuentre el lugar perfecto para su ocasión especial o vacaciones familiares.</p>
-
-      </section>
+<div class="info">
+<div class="container">
+<div class="texto">
+  <p>¿ QUIENES SOMOS ?</p>
+</div>
+<div class="texto1">
+  <p> 
+    Somos una empresa dedicada al alquiler de fincas campestres y casas de descanso. Nuestro equipo se esfuerza por ofrecer experiencias únicas y memorables, proporcionando espacios ideales para escapar del bullicio de la ciudad y disfrutar de momentos de tranquilidad y diversión en entornos naturales. Valoramos la calidad, comodidad y seguridad de nuestros clientes, brindando un servicio personalizado y eficiente adaptado a sus necesidades y preferencias.</p>
+</div>
+</div>
+</div>
 
       <section class="mission-section">
   <h2>Nos puedes contactar a través de : </h2>
@@ -44,6 +68,4 @@
 
       
 
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+   

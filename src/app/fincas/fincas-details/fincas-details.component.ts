@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FincasService } from '../fincas.service'; 
 import { ReservationsService } from 'src/app/services/reservation.service'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fincas-details',
@@ -15,11 +16,18 @@ export class FincasDetailsComponent {
 
   constructor(
     private fincasService: FincasService,
-    private reservationsService: ReservationsService
+    private reservationsService: ReservationsService,
+    private router: Router
   ) {}
 
+  home(){this.router.navigate(['/fincas'])}
+  yourReservaciones(){this.router.navigate(['fincaDetails/id'])}
+  salir(){this.router.navigate(['login'])}
+  informacion(){this.router.navigate(['fincaEdit'])}
   actualizarReserva(datosReserva: any) {
     this.reserva = datosReserva;
     this.hayReservaciones = true;
+
   }
 }
+

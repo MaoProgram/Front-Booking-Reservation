@@ -8,9 +8,9 @@
   </button>
   <mat-menu #reservasMenu="matMenu">
     <!-- Contenido del menú -->
-    <button mat-menu-item>HOME</button>
-    <button mat-menu-item>RESERVACIONES</button>
-    <button mat-menu-item>SALIR</button>
+    <button mat-menu-item class="menu-item" (click)="home()">HOME</button>
+    <button mat-menu-item class="menu-item" (click)="yourReservaciones()">RESERVACIONES</button>
+    <button mat-menu-item class="menu-item" (click)="salir()">SALIR</button>
   </mat-menu>
 
   <!-- Lista desplegable "Acerca de Nosotros" -->
@@ -19,8 +19,8 @@
   </button>
   <mat-menu #nosotrosMenu="matMenu">
     <!-- Contenido del menú -->
-    <button mat-menu-item>INFORMACIÓN GENERAL</button>
-    <button mat-menu-item>CONTACTO</button>
+    <button mat-menu-item class="menu-item" (click)="informacion()">INFORMACIÓN GENERAL</button>
+    <button mat-menu-item class="menu-item" (click)="informacion()">CONTACTO</button>
   </mat-menu>
 
   <!-- Lista desplegable "Mas Servicios" -->
@@ -29,8 +29,8 @@
   </button>
   <mat-menu #serviciosMenu="matMenu">
     <!-- Contenido del menú -->
-    <button mat-menu-item>AYUDA</button>
-    <button mat-menu-item>SUGERENCIAS</button>
+    <button mat-menu-item class="menu-item">AYUDA</button>
+    <button mat-menu-item class="menu-item">SUGERENCIAS</button>
     
   </mat-menu>
 </mat-toolbar>

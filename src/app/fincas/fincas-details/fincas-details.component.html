@@ -1,5 +1,42 @@
+<mat-toolbar>
+  <!-- Logo -->
+  <div class="logo-imagen"></div>
+  <div class="titulo"><h2>Country Stay Booker</h2></div>
+  <!-- Lista desplegable "Tus Reservas" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="reservasMenu">
+    Tus Reservas
+  </button>
+  <mat-menu #reservasMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item class="menu-item" (click)="home()">HOME</button>
+    <button mat-menu-item class="menu-item" (click)="yourReservaciones()">RESERVACIONES</button>
+    <button mat-menu-item class="menu-item" (click)="salir()">SALIR</button>
+  </mat-menu>
+
+  <!-- Lista desplegable "Acerca de Nosotros" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="nosotrosMenu">
+    Acerca de Nosotros
+  </button>
+  <mat-menu #nosotrosMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item class="menu-item" (click)="informacion()">INFORMACIÓN GENERAL</button>
+    <button mat-menu-item class="menu-item" (click)="informacion()">CONTACTO</button>
+  </mat-menu>
+
+  <!-- Lista desplegable "Mas Servicios" -->
+  <button mat-button class="dropdown-button" [matMenuTriggerFor]="serviciosMenu">
+    Mas Servicios
+  </button>
+  <mat-menu #serviciosMenu="matMenu">
+    <!-- Contenido del menú -->
+    <button mat-menu-item class="menu-item">AYUDA</button>
+    <button mat-menu-item class="menu-item">SUGERENCIAS</button>
+    
+  </mat-menu>
+</mat-toolbar>
+
 <div *ngIf="!hayReservaciones; else listaReservaciones">
-  <p>No tienes reservas creadas aún.</p>
+  <p class="texto-principal">No tienes reservas creadas aún.</p>
 </div>
 
 <ng-template #listaReservaciones>

@@ -1,7 +1,9 @@
+
 <div class="background-image"> <!-- Aquí agregamos la clase background-image -->
   <div class="login-wrap">
     <div class="login-html">
       <div class="login-form">
+        <form  (ngSubmit)="sendLogin()" [formGroup]="formLogin">
           <div class="group">
             <label for="user" class="label">Username</label>
             <input id="user" type="text" class="input">
@@ -14,6 +16,7 @@
             <input id="check" type="checkbox" class="check" checked>
             <label for="check"><span class="icon"></span> Keep me Signed in</label>
           </div>
+          
           <div class="group">
             <button class="button" (click)="login()">Log In</button>
           </div>
@@ -21,6 +24,16 @@
           <div class="foot-lnk">
             <a href="#forgot">Forgot Password?</a>
           </div>
+        </form>
+        <div *ngIf="errorSession" class="error-message">
+          Ocurrió un error con tu email o contraseña
+        </div>
+        
+        <div class="valid-message">
+          <hr>Valido: {{ formLogin.valid }}
+        </div>
         </div>
         </div>
       </div>
+  
+ 

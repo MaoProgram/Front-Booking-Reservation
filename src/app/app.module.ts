@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './pages/pages.module';
 import { FincasModule } from './fincas/fincas.module';
 import { AuthModule } from './auth/auth.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReservaDialogComponent } from './reserva-dialog/reserva-dialog.component';
 import { BoldInfoDirective } from './bold-info.directive';
@@ -17,6 +17,7 @@ import { FincasService } from './fincas/fincas.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -41,8 +42,10 @@ import { MatMenuModule } from '@angular/material/menu';
     HttpClientModule,
     MatIconModule,
     MatMenuModule,
+    FormsModule,
+    
   ],
-  providers: [ReservationsService, FincasService],
+  providers: [ReservationsService, FincasService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

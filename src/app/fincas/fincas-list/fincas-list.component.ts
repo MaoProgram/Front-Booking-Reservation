@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { PageEvent } from '@angular/material/paginator';
 import { ReservaDialogComponent } from 'src/app/reserva-dialog/reserva-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fincas-list',
@@ -11,6 +12,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./fincas-list.component.scss'],
 })
 export class FincasListComponent {
+  
+  
   fincas = [
     {
       nombre: 'El Manglar',
@@ -181,11 +184,17 @@ export class FincasListComponent {
   constructor(
     private dialog: MatDialog,
     private renderer: Renderer2,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {
     this.updatePaginatedFincas();
+    
   }
 
+  home(){this.router.navigate(['/fincas'])}
+  yourReservaciones(){this.router.navigate(['fincaDetails/id'])}
+  salir(){this.router.navigate(['login'])}
+  informacion(){this.router.navigate(['fincaEdit'])}
   updatePaginatedFincas() {
     this.paginatedFincas = this.chunkArray(this.fincas, this.pageSize);
   }

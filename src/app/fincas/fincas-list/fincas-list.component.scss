@@ -30,15 +30,21 @@ mat-toolbar {
 
   // Estilos para el botón de lista desplegable
   .dropdown-button {
-    color: #000000; // Color del texto del botón de lista desplegable
-    background-color: #8dc2ff80;
+    color: rgb(0, 0, 0); // Color del texto del botón de lista desplegable
+    background-color: #FABA55;
     font-weight: bold; // Peso de la fuente del botón de lista desplegable
     margin-right: 15px; // Espaciado a la derecha entre botones
     border-color: #636262;
-    border-radius: 10%;
-    border-style:dotted;
-    border-width: 0.2px;
+    border-radius: 5%;
+    border: 2px outset #FA906A;
     width: auto; // Ancho automático
+    padding: 7px;
+
+    cursor: pointer; // Cambiar el cursor al pasar sobre el botón
+
+  &:hover {
+    background-color: darken(#fcf9f8, 10%); // Oscurecer el color de fondo al pasar el ratón por encima
+  }
   }
 }
 
@@ -88,7 +94,20 @@ mat-toolbar {
   }
 }
 
+.menu-item {
+  color: #303030; /* Color del texto */
+  background-color: #f7f2d3bb; /* Color de fondo */
+  padding: 8px 16px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  
+}
 
+/* Estilos para el estado de hover */
+.menu-item:hover {
+  background-color: #ddd; /* Color de fondo al pasar el ratón por encima */
+  
+}
 
 // Estilos para las tarjetas individuales
 .card-container {
@@ -142,15 +161,6 @@ mat-toolbar {
   flex-wrap: wrap; // Permitir que los contenedores se envuelvan a la siguiente línea si no caben en el ancho del contenedor padre
 }
 
-//.card-container {
-  
-  //width: calc(31% - 10px); // Tamaño de cada tarjeta, con margen entre ellas
-  //margin-top: 10px;
-  //margin-bottom: 20px; // Margen inferior entre las tarjetas
-  //padding: 10px 10px;
-  //height: 480px;
-  
-//}
 .card-columns {
   display: flex;
   flex-wrap: wrap;

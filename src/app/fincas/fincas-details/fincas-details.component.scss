@@ -1,0 +1,62 @@
+mat-toolbar {
+    background: linear-gradient(to right, #FFF0DE, #cbdbf5, #cdffd7);
+    color: rgb(32, 32, 32); // Color del texto en el toolbar
+    height: 50px; // Altura del toolbar
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2); // Sombra del toolbar
+    display: flex; // Usar flexbox para alinear los elementos
+    justify-content: flex-end; // Alinear los elementos alrededor
+    padding: 0 15px; // Espaciado interno horizontal del toolbar
+    align-items: center; // Alinear verticalmente los elementos al centro
+  
+    // Estilos para el logo
+    .logo-imagen {
+      background-image: url(/assets/img/logo-reservefinca.png); // URL de la imagen del logo
+      background-size: contain; // Ajustar el tamaño de la imagen para que quepa
+      background-repeat: no-repeat; // Evitar la repetición de la imagen
+      background-position: left center; // Posicionar la imagen a la izquierda y centrada verticalmente
+      height: 50px; // Altura del logo
+      width: 80px; // Ancho del logo
+      margin-right: 130px; // Desplazar hacia la izquierda para posicionar de manera independiente
+  }
+  .titulo {
+    h2 {
+      font-size: 24px; // Tamaño de fuente del título
+      color: #011b3b; // Color del texto del título
+      margin: 10px 220px; // Margen superior e inferior de 10px, margen izquierdo y derecho automático
+      
+    }
+  }
+  
+    // Estilos para el botón de lista desplegable
+    .dropdown-button {
+      color: rgb(0, 0, 0); // Color del texto del botón de lista desplegable
+      background-color: #FABA55;
+      font-weight: bold; // Peso de la fuente del botón de lista desplegable
+      margin-right: 15px; // Espaciado a la derecha entre botones
+      border-color: #636262;
+      border-radius: 5%;
+      border: 2px outset #FA906A;
+      width: auto; // Ancho automático
+      padding: 7px;
+  
+      cursor: pointer; // Cambiar el cursor al pasar sobre el botón
+  
+    &:hover {
+      background-color: darken(#fcf9f8, 10%); // Oscurecer el color de fondo al pasar el ratón por encima
+    }
+    }
+  }
+
+  .texto-principal{
+    position: fixed; /* Fija el elemento en la ventana del navegador */
+  top: 50%; /* Coloca el borde superior del elemento en el 50% del espacio disponible verticalmente */
+  left: 50%; /* Coloca el borde izquierdo del elemento en el 50% del espacio disponible horizontalmente */
+  transform: translate(-50%, -50%); /* Centra el elemento tanto horizontal como verticalmente */
+  text-align: center; /* Alinea el texto al centro */
+  z-index: 1; /* Asegura que el texto esté en frente de otros elementos */
+  color: rgb(0, 0, 0); /* Color del texto */
+  font-size: 15px; /* Tamaño de la fuente */
+  font-weight: normal; /* Peso de la fuente */
+  font-family: Arial, Helvetica, sans-serif; /* Tipo de fuente */
+  }
+  
