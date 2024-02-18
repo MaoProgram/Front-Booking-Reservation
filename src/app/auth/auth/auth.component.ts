@@ -32,12 +32,12 @@ export class AuthComponent implements OnInit {
       ]),
     });
   }
-  sendLogin(): void {
+  sendLogin(formLogin:FormGroup): void {
     const { email, password } = this.formLogin.value;
     this.authService.sendCredential(email, password).subscribe({
       next: (responseOk: any) => {
-        const { tokenSession } = responseOk;
-        this.cookie.set('token', tokenSession, 1, '/');
+        //const { tokenSession } = responseOk;
+        //this.cookie.set('token', tokenSession, 1, '/');
 
         console.log('Sesión iniciada correctamente', responseOk);
       },
