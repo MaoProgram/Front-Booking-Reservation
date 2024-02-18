@@ -202,7 +202,7 @@ export class FincasListComponent {
   chunkArray(array: any[], size: number): any[] {
     const resultArray = [];
     for (let i = 0; i < array.length; i += size) {
-      resultArray.push(array.slice(i, i + size));
+      resultArray.push(array.slice(i, i  + size));
     }
     return resultArray;
   }
