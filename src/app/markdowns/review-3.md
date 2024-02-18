@@ -10,4 +10,4 @@ Además, la aplicación cuenta con un modal o formulario que recopila la informa
 
 ___________________________________________________________________________________________________________
 
-Durante este sprint, destaco la implementacion del ngfor y el ngif ya que tienen un funcionamiento demasiado util en las aplicaciones.
+Durante este sprint, destaco la implementacion de Jwt en el proyecto, ya que en mi concepto es de vital importancia hoy en dia contar con la seguridad de la informacion y la proteccion de datos personales.
